@@ -13,7 +13,7 @@
   <style>
    .mySlides {display:none;}
    </style>
-  
+  <body>
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
@@ -86,15 +86,18 @@
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
     const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
+    const CausesCount = displayWordCount("Causes_InText");
+   const SolutionsCount = displayWordCount("Solutions_InText");
+   const ConclutionCount = displayWordCount("Conclusion");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount + CausesCount + SolutionsCount + ConclutionCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
   // Run the function for specific sections and display total count when the page loads
   window.onload = displayTotalWordCount;
 </script>
+ </body>
 
 <!style for tables>
   <style>
@@ -160,7 +163,7 @@
    <td><a href="#Introduction">Introduction</td>
  </tr>
   <tr>
-   <td><a href="#Damage & Causes">Damage & Causes</td>
+   <td><a href="#Causes">Causes</td>
  </tr>
   <tr>
    <td><a href="#Solutions">Solutions</td>
@@ -189,7 +192,7 @@ Over the past decade, the percentage of greenhouse gas emissions, primarily carb
     </pre>
   </p>
   
-   <h3 id="Damage & Causes">Damage & Causes</h3>
+   <h3 id="Causes">Causes</h3>
    <p class="ex1">
     <pre>
 Internal combustion engine vehicles have been a mass contributor to air pollution for decades, by emitting pollutants into the atmosphere through burning fossil fuels (EPA, 2026), with most of these greenhouse gas emissions being a result from the combustion of petroleum-based products in ICE vehicles (EPA, 2026). These emissions include gases, such as carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O). Over time, these pollutants accumulate, especially in traffic dense areas such as cities and motorways, reducing the overall air quality in those areas. To fuel internal combustion engines, it takes mining and separating crude oil into different sections to make diesel fuel (Britannica, 2026), which itself releases toxic gases to the atmosphere. Combined with the burning of fuels inside these engines, it leads to a massive output of gases into the air only from the transportation sector.
