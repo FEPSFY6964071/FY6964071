@@ -64,43 +64,6 @@
     window.onload = getLastUpdatedTime;
 </script>
 
-
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const CausesCount = displayWordCount("Causes_InText");
-   const SolutionsCount = displayWordCount("Solutions_InText");
-   const ConclutionCount = displayWordCount("Conclusion");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + CausesCount + SolutionsCount + ConclutionCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>
- </body>
- 
-
 <!style for tables>
   <style>
         table {
@@ -180,6 +143,12 @@
   
 </head> 
   <body>
+    <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
   <h3 id="Abstract">Abstract</h3>
    <p class="ex1">
    <pre>
@@ -233,6 +202,35 @@ Voelcker, J. (2024) Hydrogen fuel cell vehicles: Everything you need to know. Av
 World Health Organisation (2023) Climate Change. Available at: https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health (Accessed: 27/10/2026).
 </pre>
   </p>
+
+
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const CausesCount = displayWordCount("Causes_InText");
+   const SolutionsCount = displayWordCount("Solutions_InText");
+   const ConclutionCount = displayWordCount("Conclusion");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + CausesCount + SolutionsCount + ConclutionCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+ </body>
    
-   </body>
 </html>
